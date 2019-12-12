@@ -12,3 +12,9 @@ script:
 - npm test
 - ng e2e
 - ng build --prod
+deploy:
+  local_dir: dist/pesel
+  provider: firebase
+  token: $FIREBASE_TOKEN
+  on:
+    branch: master
