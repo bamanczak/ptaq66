@@ -17,7 +17,6 @@ describe('workspace-project App', () => {
   it('should accept valid PESEL', () => {
     page.navigateTo();
     page.fillPeselInput('19321212346');
-    page.waitForValidation();
     expect(page.getValidationMessage()).toEqual('PESEL prawidłowy');
     expect(page.getBirthDate()).toEqual('12.12.2019');
     expect(page.getSex()).toEqual('Kobieta');
@@ -26,7 +25,6 @@ describe('workspace-project App', () => {
   it('should reject invalid PESEL', () => {
     page.navigateTo();
     page.fillPeselInput('19321212345');
-    page.waitForValidation();
     expect(page.getValidationMessage()).toEqual('PESEL nieprawidłowy');
   });
 

@@ -26,6 +26,7 @@ export class AppPage {
     input.sendKeys(pesel);
     const submitButton = element(by.css('.big-input button'));
     submitButton.click();
+    this.waitForValidation();
   }
 
   waitForValidation() {

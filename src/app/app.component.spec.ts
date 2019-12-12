@@ -18,11 +18,9 @@ describe('AppComponent', () => {
     expect(component.month).toBe(12);
   });
 
-  it('should handle submit correctly with invalid PESEL', () => {
-    component.inputNumber = '19321212345';
-    component.onSubmit();
-    expect(component.day).toBe(undefined);
-    expect(component.isValid).toBe(false);
+  it('should identify birth in XXIth century correctly', () => {
+    const pesel21Century: Array<number> = [1, 9, 3, 2, 1, 2, 1, 2, 3, 4, 5];
+    expect(component.getYear(pesel21Century)).toEqual(2019);
   });
 
 });
