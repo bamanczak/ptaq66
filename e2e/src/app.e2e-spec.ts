@@ -9,11 +9,6 @@ describe('workspace-project App', () => {
     page = new AppPage();
   });
 
-  it('should display welcome message', () => {
-    page.navigateTo();
-    expect(page.getTitleText()).toEqual('Walidator PESEL');
-  });
-
   it('should accept valid PESEL', () => {
     page.navigateTo();
     page.fillPeselInput('19321212346');
